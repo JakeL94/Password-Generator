@@ -7,6 +7,7 @@ const numbers = "1234567890";
 
 
 // variables for user to choose which elements to include in password
+const checkLength = document.querySelector('#length');
 const checkUpper = document.querySelector('#upper');
 const checkLower = document.querySelector('#lower');
 const checkNumber = document.querySelector('#number');
@@ -16,7 +17,7 @@ const checkSymbol = document.querySelector('#symbol');
 
 // get random upper letters, lower letters, symbols and numbers
 function lowerCaseGenerate() {
-  return lowerLetters[Math.floor(Math.randoM() * lowerLetters.length)];
+  return lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
 }
 
 function upperCaseGenerate() {
@@ -56,11 +57,11 @@ function generateElement() {
 
 //Password generation
 function generatePassword() {
-  const length = document.querySelector('#length');
+  const length = checkLength.value;
   console.log(length);
   let password = "";
 
-  for (let i = 0; i < 8 || i > 128; i++) {
+  for (let i = 0; i < length; i++) {
     const element = generateElement();
     console.log(element);
     password += element;
@@ -74,7 +75,7 @@ const generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  const length = document.querySelector('#length');
+  const length = checkLength.value;
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
