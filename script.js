@@ -66,6 +66,7 @@ function generatePassword() {
     console.log(element);
     password += element;
   }
+  return password;
 };
 
 // console.log(generatePassword());
@@ -84,7 +85,7 @@ function writePassword() {
   }
   else {
     passwordText.value = password;
-  }  
+  } 
 }
 
 // Add event listener to generate button
