@@ -57,17 +57,17 @@ function generateElement() {
 //Password generation
 function generatePassword() {
   const length = document.querySelector('#length');
-
+  console.log(length);
   let password = "";
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < 8 || i > 128; i++) {
     const element = generateElement();
+    console.log(element);
     password += element;
   }
-  return password;
 };
 
-console.log(generatePassword());
+// console.log(generatePassword());
 
 // Get references to the #generate element
 const generateBtn = document.querySelector("#generate");
